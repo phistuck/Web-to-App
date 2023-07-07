@@ -1,0 +1,20 @@
+workflows:
+  my-workflow:
+    scripts:
+      - name: List files in .
+        working_directory: .
+        script: ls -lnia
+      - name: Set nice permissions
+        working_directory: .
+        script: chmod +x gradlew        
+      - name: List tasks
+        working_directory: .
+        script: ./gradlew tasks
+      - name: Do something
+        working_directory: .
+        script: ./gradlew
+      - name: Build Android APK
+        working_directory: .
+        script: ./gradlew build
+    artifacts:
+      - app/build/outputs/**/**/*.apk
