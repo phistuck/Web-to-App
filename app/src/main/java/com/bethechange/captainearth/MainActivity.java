@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private WebView webViewPop;
     private AlertDialog builder;
 
-    private String url = "https://web.whatsapp.com";
+    private String url = "https://www.whatismybrowser.com/detect/what-is-my-user-agent/";
 
     private WebView webView;
-    private String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36";
+    private String userAgent; // = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
         // Set User Agent
         //userAgent = System.getProperty("http.agent");
         // the upper line sometimes causes "403: disallowed user agent error"
-        // userAgent = "";
+        userAgent = "";
         try {
-        webSettings.setUserAgentString(userAgent);
+        webSettings.setUserAgentString(userAgent + "Your App Info/Version");
         } catch (Exception e) {
         }
 
