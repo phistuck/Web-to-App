@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private WebView webViewPop;
     private AlertDialog builder;
 
-    private String url = "https://captain-earth.com";
+    private String url = "https://web.whatsapp.com";
 
     private WebView webView;
-    private String userAgent;
+    private String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         // Set User Agent
         //userAgent = System.getProperty("http.agent");
         // the upper line sometimes causes "403: disallowed user agent error"
-        userAgent = "";
-        webSettings.setUserAgentString(userAgent + "Your App Info/Version");
+        // userAgent = "";
+        webSettings.setUserAgentString(userAgent);
 
         // Enable Cookies
         CookieManager.getInstance().setAcceptCookie(true);
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             popSettings.setSaveFormData(true);
             popSettings.setEnableSmoothTransition(true);
             // Set User Agent
-            popSettings.setUserAgentString(userAgent + "Your App Info/Version");
+            popSettings.setUserAgentString(userAgent);
             // to support content re-layout for redirects
             popSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
 
