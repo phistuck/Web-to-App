@@ -55,7 +55,10 @@ public class MainActivity extends AppCompatActivity {
         //userAgent = System.getProperty("http.agent");
         // the upper line sometimes causes "403: disallowed user agent error"
         // userAgent = "";
+        try {
         webSettings.setUserAgentString(userAgent);
+        } catch (Exception e) {
+        }
 
         // Enable Cookies
         CookieManager.getInstance().setAcceptCookie(true);
